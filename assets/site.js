@@ -78,25 +78,33 @@
     if (topicCounts[topic] !== undefined) node.textContent = String(topicCounts[topic]);
   });
 
-  const requestedFilter = window.location.hash.slice(1);
-  const requestedFilterButton = filterButtons.find((button) => button.dataset.filter === requestedFilter);
-  if (requestedFilterButton) {
-    activeFilter = requestedFilter;
-    filterButtons.forEach((item) => item.classList.toggle("is-active", item === requestedFilterButton));
-  } else if (window.location.hash === "#conspiracy-theories") {
-    filterButtons.forEach((item) => item.classList.remove("is-active"));
-    separateThemeLinks.forEach((item) => item.classList.add("is-active"));
+  function selectArchiveFilter(filter) {
+    const selectedButton = filterButtons.find((button) => button.dataset.filter === filter);
+    if (!selectedButton) return false;
+    activeFilter = filter;
+    filterButtons.forEach((item) => item.classList.toggle("is-active", item === selectedButton));
+    separateThemeLinks.forEach((item) => item.classList.remove("is-active"));
+    renderArchive();
+    return true;
   }
 
+  function applyArchiveHash() {
+    const requestedFilter = window.location.hash.slice(1);
+    if (selectArchiveFilter(requestedFilter)) return;
+    if (window.location.hash === "#conspiracy-theories") {
+      filterButtons.forEach((item) => item.classList.remove("is-active"));
+      separateThemeLinks.forEach((item) => item.classList.add("is-active"));
+    }
+  }
+
+  applyArchiveHash();
   if (list) renderArchive();
   if (search) search.addEventListener("input", renderArchive);
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      activeFilter = button.dataset.filter;
-      filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
-      separateThemeLinks.forEach((item) => item.classList.remove("is-active"));
-      renderArchive();
+      selectArchiveFilter(button.dataset.filter);
+      window.history.replaceState(null, "", `#${button.dataset.filter}`);
     });
   });
 
@@ -106,6 +114,8 @@
       separateThemeLinks.forEach((item) => item.classList.toggle("is-active", item === link));
     });
   });
+
+  window.addEventListener("hashchange", applyArchiveHash);
 
   const header = document.querySelector("[data-header]");
   function updateHeader() {
