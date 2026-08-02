@@ -54,6 +54,12 @@
     node.textContent = String(appearances.length);
   });
 
+  document.querySelectorAll("[data-all-appearance-count]").forEach((node) => {
+    const separateCount = Number(node.dataset.separateCount || 0);
+    const suffix = node.dataset.suffix || "";
+    node.textContent = `${appearances.length + separateCount}${suffix}`;
+  });
+
   document.querySelectorAll("[data-appearance-total]").forEach((node) => {
     node.textContent = `${appearances.length} verified`;
   });
@@ -71,6 +77,16 @@
     const topic = node.dataset.topicCount;
     if (topicCounts[topic] !== undefined) node.textContent = String(topicCounts[topic]);
   });
+
+  const requestedFilter = window.location.hash.slice(1);
+  const requestedFilterButton = filterButtons.find((button) => button.dataset.filter === requestedFilter);
+  if (requestedFilterButton) {
+    activeFilter = requestedFilter;
+    filterButtons.forEach((item) => item.classList.toggle("is-active", item === requestedFilterButton));
+  } else if (window.location.hash === "#conspiracy-theories") {
+    filterButtons.forEach((item) => item.classList.remove("is-active"));
+    separateThemeLinks.forEach((item) => item.classList.add("is-active"));
+  }
 
   if (list) renderArchive();
   if (search) search.addEventListener("input", renderArchive);
@@ -90,11 +106,6 @@
       separateThemeLinks.forEach((item) => item.classList.toggle("is-active", item === link));
     });
   });
-
-  if (window.location.hash === "#conspiracy-theories") {
-    filterButtons.forEach((item) => item.classList.remove("is-active"));
-    separateThemeLinks.forEach((item) => item.classList.add("is-active"));
-  }
 
   const header = document.querySelector("[data-header]");
   function updateHeader() {

@@ -178,6 +178,62 @@ figure {
   right: 0;
 }
 
+.hero-theme-nav {
+  position: absolute;
+  top: 5.05rem;
+  left: var(--gutter);
+  right: var(--gutter);
+  z-index: 4;
+  display: flex;
+  align-items: stretch;
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-theme-nav a,
+.hero-theme-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+}
+
+.hero-theme-label {
+  flex: 0 0 auto;
+  padding-right: clamp(1rem, 2vw, 2rem);
+  color: var(--muted-dark);
+}
+
+.hero-theme-nav a {
+  flex: 0 0 auto;
+  padding: 0 clamp(0.75rem, 1.4vw, 1.25rem);
+  border-left: 1px solid var(--line-dark);
+  color: var(--paper);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.hero-theme-nav a:hover,
+.hero-theme-nav a:focus-visible {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.hero-theme-nav .hero-theme-separate {
+  margin-left: auto;
+  border-right: 1px solid var(--line-dark);
+  color: var(--acid);
+}
+
+.hero-theme-separate span {
+  margin-right: 0.8rem;
+  color: var(--muted-dark);
+  font-size: 0.55rem;
+}
+
 .header-cta {
   justify-self: end;
   padding: 0.7rem 0 0.55rem;
@@ -1541,6 +1597,20 @@ a.conspiracy-appearance:focus-visible h3 {
 
   .site-header nav {
     display: none;
+  }
+
+  .hero-theme-nav {
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    overflow-x: auto;
+    padding: 0 var(--gutter);
+    background: rgba(16, 17, 14, 0.96);
+    scrollbar-width: thin;
+  }
+
+  .hero-theme-nav .hero-theme-separate {
+    margin-left: 1.25rem;
   }
 
   .hero {
