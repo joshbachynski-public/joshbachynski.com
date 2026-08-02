@@ -1252,6 +1252,9 @@ blockquote cite {
 }
 
 .filter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   padding: 0.55rem 0.85rem;
   border: 1px solid var(--line-light);
   border-radius: 0;
@@ -1261,7 +1264,9 @@ blockquote cite {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.64rem;
   letter-spacing: 0.06em;
+  text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .filter-button:hover,
@@ -1315,6 +1320,7 @@ blockquote cite {
 
 .archive-conspiracy {
   overflow: hidden;
+  scroll-margin-top: 10.5rem;
   background: var(--acid);
   color: var(--ink);
 }
@@ -1347,7 +1353,19 @@ blockquote cite {
   min-height: 12rem;
   padding: 2.25rem 0;
   border-top: 2px solid var(--ink);
+  color: inherit;
+  text-decoration: none;
+}
+
+.conspiracy-appearance:last-child {
   border-bottom: 2px solid var(--ink);
+}
+
+a.conspiracy-appearance:hover h3,
+a.conspiracy-appearance:focus-visible h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.12em;
 }
 
 .conspiracy-index span,

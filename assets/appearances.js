@@ -260,14 +260,6 @@ window.APPEARANCES = [
     url: "https://podcasts.apple.com/us/podcast/exploring-ethics-ai-and-seo-interview-with-josh/id1504745986?i=1000619527451"
   },
   {
-    date: "2023-07-05",
-    show: "Conspiracy Clearinghouse",
-    title: "Weird AI Yankovic: Not-So-Scary AI Futures",
-    topics: ["ai", "philosophy"],
-    label: "AI · Culture",
-    url: "https://podcasts.apple.com/us/podcast/weird-ai-yankovic-not-so-scary-ai-futures/id1508567886?i=1000619361448"
-  },
-  {
     date: "2023-06-29",
     show: "Talent Empowerment",
     title: "Creating a Conscious AI",
@@ -347,14 +339,6 @@ window.APPEARANCES = [
     topics: ["ai", "business"],
     label: "AI · Business",
     url: "https://www.youtube.com/watch?v=Rn7iYsoLSHA"
-  },
-  {
-    date: "2023-06-07",
-    show: "Conspiracy Clearinghouse",
-    title: "The Skynet Matrix: AI Goes Rogue",
-    topics: ["ai", "philosophy"],
-    label: "AI · Culture",
-    url: "https://conspiracyclearinghouse.podbean.com/e/the-skynet-matrix-ai-goes-rogue/"
   },
   {
     date: "2023-05-17",
@@ -523,14 +507,6 @@ window.APPEARANCES = [
     topics: ["ai", "business", "philosophy"],
     label: "AI · Leadership",
     url: "https://digitalcxo.com/video/leadership-insights-self-aware-ai-systems/"
-  },
-  {
-    date: "2021-02-11",
-    show: "Mystic-Skeptic Radio",
-    title: "Covid Virus Conspiracy?",
-    topics: ["philosophy"],
-    label: "Culture · Philosophy",
-    url: "https://podcasts.apple.com/us/podcast/covid-virus-conspiracy/id1205244844?i=1000508659378"
   },
   {
     date: "2021-01-21",

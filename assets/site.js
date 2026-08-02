@@ -32,6 +32,7 @@
   const list = document.querySelector("[data-appearance-list]");
   const search = document.querySelector("[data-appearance-search]");
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
+  const separateThemeLinks = Array.from(document.querySelectorAll("[data-theme-link]"));
   const empty = document.querySelector("[data-archive-empty]");
   const countNodes = Array.from(document.querySelectorAll("[data-appearance-count]"));
   let activeFilter = "all";
@@ -78,9 +79,22 @@
     button.addEventListener("click", () => {
       activeFilter = button.dataset.filter;
       filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      separateThemeLinks.forEach((item) => item.classList.remove("is-active"));
       renderArchive();
     });
   });
+
+  separateThemeLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      filterButtons.forEach((item) => item.classList.remove("is-active"));
+      separateThemeLinks.forEach((item) => item.classList.toggle("is-active", item === link));
+    });
+  });
+
+  if (window.location.hash === "#conspiracy-theories") {
+    filterButtons.forEach((item) => item.classList.remove("is-active"));
+    separateThemeLinks.forEach((item) => item.classList.add("is-active"));
+  }
 
   const header = document.querySelector("[data-header]");
   function updateHeader() {
