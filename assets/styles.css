@@ -409,6 +409,7 @@ figure {
 .hosted-section,
 .bio-section,
 .booking-section,
+.archive-conspiracy,
 .archive-hosted,
 .archive-note {
   padding: var(--section-y) var(--gutter);
@@ -435,6 +436,7 @@ figure {
 .hosted-intro h2,
 .bio-title h2,
 .booking-section h2,
+.archive-conspiracy h2,
 .archive-hosted h2 {
   margin-bottom: 0;
   font-size: clamp(2.75rem, 6.4vw, 6.5rem);
@@ -1311,6 +1313,94 @@ blockquote cite {
   font-size: 1.2rem;
 }
 
+.archive-conspiracy {
+  overflow: hidden;
+  background: var(--acid);
+  color: var(--ink);
+}
+
+.conspiracy-heading {
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr 0.8fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: end;
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.conspiracy-heading .eyebrow,
+.conspiracy-heading h2,
+.conspiracy-heading > p:last-child {
+  margin: 0;
+}
+
+.conspiracy-heading > p:last-child {
+  max-width: 32rem;
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  line-height: 1.45;
+}
+
+.conspiracy-appearance {
+  display: grid;
+  grid-template-columns: 0.55fr 2fr 0.8fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  min-height: 12rem;
+  padding: 2.25rem 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.conspiracy-index span,
+.conspiracy-index strong,
+.conspiracy-show,
+.conspiracy-status {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.conspiracy-index span,
+.conspiracy-index strong {
+  display: block;
+}
+
+.conspiracy-index span {
+  margin-bottom: 0.45rem;
+  font-size: 0.67rem;
+}
+
+.conspiracy-index strong {
+  font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+}
+
+.conspiracy-show {
+  margin: 0 0 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.conspiracy-copy h3 {
+  margin: 0 0 0.55rem;
+  font-size: clamp(2rem, 4.4vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.conspiracy-copy > p:last-child {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.conspiracy-status {
+  justify-self: end;
+  margin: 0;
+  padding-left: 1.5rem;
+  border-left: 1px solid rgba(16, 17, 14, 0.4);
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
 .archive-hosted {
   background: var(--ink-soft);
   color: var(--paper);
@@ -1721,6 +1811,26 @@ blockquote cite {
     margin-top: 3rem;
   }
 
+  .conspiracy-heading {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .conspiracy-heading > p:last-child {
+    max-width: 44rem;
+  }
+
+  .conspiracy-appearance {
+    grid-template-columns: 5.2rem 1fr;
+  }
+
+  .conspiracy-status {
+    grid-column: 2;
+    justify-self: start;
+    padding: 0;
+    border-left: 0;
+  }
+
   .archive-hosted .hosted-shows {
     display: block;
   }
@@ -1746,6 +1856,15 @@ blockquote cite {
   .appearance-date,
   .archive-columns span:first-child {
     display: none;
+  }
+
+  .conspiracy-appearance {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .conspiracy-status {
+    grid-column: 1;
   }
 
   .record-ledger {
