@@ -15,7 +15,7 @@
   grid-template-columns: minmax(0, 1.08fr) minmax(28rem, 0.92fr);
   grid-template-rows: 1fr auto;
   min-height: min(52rem, 100svh);
-  padding-top: 5.1rem;
+  padding-top: var(--site-header-height);
   border-bottom: 1px solid var(--line-dark);
 }
 
@@ -902,8 +902,8 @@ a.career-moment:focus-visible {
 }
 
 @media (max-width: 840px) {
-  .producer-header nav a:nth-child(2),
-  .producer-header nav a:nth-child(4) {
+  .producer-header .primary-nav a:nth-child(2),
+  .producer-header .primary-nav a:nth-child(4) {
     display: none;
   }
 
@@ -992,7 +992,7 @@ a.career-moment:focus-visible {
 }
 
 @media (max-width: 560px) {
-  .producer-header nav {
+  .producer-header .primary-nav {
     display: none;
   }
 
