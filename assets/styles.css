@@ -204,6 +204,7 @@ figure {
 
 .header-theme-label {
   flex: 0 0 auto;
+  margin-right: auto;
   padding: 0 clamp(1rem, 2vw, 2rem);
   color: var(--muted-dark);
 }
@@ -223,16 +224,8 @@ figure {
   color: var(--ink);
 }
 
-.header-theme-nav .header-theme-separate {
-  margin-left: auto;
+.header-theme-nav a:last-child {
   border-right: 1px solid var(--line-dark);
-  color: var(--acid);
-}
-
-.header-theme-separate span {
-  margin-right: 0.8rem;
-  color: var(--muted-dark);
-  font-size: 0.55rem;
 }
 
 .header-cta {
@@ -1611,10 +1604,6 @@ a.conspiracy-appearance:focus-visible h3 {
   .header-theme-nav a,
   .header-theme-label {
     min-height: 3.2rem;
-  }
-
-  .header-theme-nav .header-theme-separate {
-    margin-left: 1.25rem;
   }
 
   .hero {
