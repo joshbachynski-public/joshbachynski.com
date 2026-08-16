@@ -61,7 +61,7 @@
   });
 
   document.querySelectorAll("[data-appearance-total]").forEach((node) => {
-    node.textContent = `${appearances.length} verified`;
+    node.textContent = `${appearances.length} podcast appearances`;
   });
 
   const showCount = new Set(appearances.map((item) => item.show)).size;
